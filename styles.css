@@ -34,7 +34,8 @@ body {
 
 .top-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 12px;
   align-items: center;
   padding: 8px 24px;
   border-bottom: 1px solid var(--border);
@@ -44,21 +45,7 @@ body {
   z-index: 20;
 }
 
-.notif-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background-color: var(--bg-elevated);
-  border: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--muted);
-}
 
-.shortcut {
-  opacity: 0.8;
-}
 
 .illinois-logo {
   height: 28px;
@@ -97,29 +84,8 @@ body {
   justify-content: space-between;
 }
 
-.search-wrapper {
-  flex: 1;
-  min-width: 220px;
-}
 
-.search-input {
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background-color: var(--bg-elevated);
-  color: var(--text);
-  font-size: 14px;
-}
 
-.search-input::placeholder {
-  color: var(--muted);
-}
-
-.last-update {
-  font-size: 13px;
-  color: var(--muted);
-}
 
 /* Filters and tabs */
 

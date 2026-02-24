@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gies Sustainability Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-left">
+      <div class="notif-pill">Notifications <span class="shortcut">alt+T</span></div>
+    </div>
+    <div class="top-right">
+      <div class="illinois-logo">Illinois Logo</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="page-header">
+      <h1>Gies Sustainability Dashboard</h1>
+      <div class="header-controls">
+        <div class="search-wrapper">
+          <input type="text" placeholder="Free Search" class="search-input">
+        </div>
+        <div class="last-update">
+          <span>Last Update:&nbsp;</span>
+          <strong>Feb 16, 2026</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="filters-bar">
+      <div class="filters-left">
+        <button class="filters-btn">
+          <span>Filters</span>
+          <span class="badge">2</span>
+        </button>
+        <div class="filter-chip">
+          <span>Business Journals Only</span>
+          <button class="chip-remove" aria-label="Remove filter">&times;</button>
+        </div>
+        <div class="filter-chip">
+          <span>Year: 1966 - 2024</span>
+          <button class="chip-remove" aria-label="Remove filter">&times;</button>
+        </div>
+      </div>
+      <nav class="tabs">
+        <button class="tab active">Overview</button>
+        <button class="tab">Sustainability Goals</button>
+        <button class="tab">Journal Trends</button>
+        <button class="tab">Departments</button>
+        <button class="tab">Faculty</button>
+        <button class="tab">Details</button>
+      </nav>
+    </section>
+
+    <section class="content">
+      <section class="kpi-grid">
+        <article class="kpi-card">
+          <h3>Year Range</h3>
+          <p class="kpi-value">1966 - 2024</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Total Research Articles</h3>
+          <p class="kpi-value">1775</p>
+        </article>
+        <article class="kpi-card">
+          <h3>SDG Relevant Articles</h3>
+          <p class="kpi-value">292</p>
+          <p class="kpi-subtext">16% of total</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Articles in Top Journals</h3>
+          <p class="kpi-value">908</p>
+          <p class="kpi-subtext">51% of total</p>
+        </article>
+        <article class="kpi-card">
+          <h3>SDG Articles in Top Journals</h3>
+          <p class="kpi-value">128</p>
+          <p class="kpi-subtext">44% of SDG articles</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Departments</h3>
+          <p class="kpi-value">5</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Faculty Members</h3>
+          <p class="kpi-value">142</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Engaging Faculty</h3>
+          <p class="kpi-value">92</p>
+          <p class="kpi-subtext">65% of faculty</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Avg Articles / Faculty</h3>
+          <p class="kpi-value">12.5</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Avg Top Articles / Faculty</h3>
+          <p class="kpi-value">6.4</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Avg SDG Articles / Faculty</h3>
+          <p class="kpi-value">2.1</p>
+        </article>
+      </section>
+
+      <section class="split-section">
+        <article class="panel">
+          <header class="panel-header">
+            <h3>Proportion of SDG Relevant Articles</h3>
+            <p class="panel-subtitle">
+              The proportion of articles that align with UN sustainability goals
+            </p>
+          </header>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-dot non-sustainable"></span>
+              <span>Non-Sustainable</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot sustainable"></span>
+              <span>Sustainable</span>
+            </div>
+          </div>
+          <div class="bar-chart" aria-label="Proportion of SDG relevant articles">
+            <div class="bar non-sustainable" style="width: 84%;">84%</div>
+            <div class="bar sustainable" style="width: 16%;">16%</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <header class="panel-header">
+            <h3>Proportion of Faculty Engaged in SDG Research</h3>
+            <p class="panel-subtitle">
+              Percentage of faculty contributing to sustainability publications
+            </p>
+          </header>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-dot engaging"></span>
+              <span>Engaging Faculty</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot non-engaging"></span>
+              <span>Non-Engaging Faculty</span>
+            </div>
+          </div>
+          <div class="bar-chart" aria-label="Proportion of faculty engaged in SDG research">
+            <div class="bar engaging" style="width: 65%;">65%</div>
+            <div class="bar non-engaging" style="width: 35%;">35%</div>
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <button class="scroll-top" id="scrollTopBtn">Scroll to top</button>
+    <span class="footer-text">Gies Sustainability Dashboard © 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -61,12 +61,10 @@ body {
 }
 
 .illinois-logo {
-  font-size: 13px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background-color: var(--bg-elevated);
-  color: var(--muted);
+  height: 28px;
+  width: auto;
+  display: block;
+  /* image itself supplies the branding; no pill background needed */
 }
 
 /* Layout */

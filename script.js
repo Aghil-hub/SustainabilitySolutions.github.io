@@ -10,12 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Tab active state (no real routing here, just visual)
+  // Tab active state with content panel switching
   const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".tab-panel");
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       tabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
+
+      const targetTab = tab.dataset.tab;
+      panels.forEach(panel => {
+        const isTarget = panel.dataset.panel === targetTab;
+        panel.classList.toggle("active", isTarget);
+      });
     });
   });
 

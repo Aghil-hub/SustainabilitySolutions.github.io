@@ -190,12 +190,24 @@ body {
   gap: 20px;
 }
 
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: flex;
+}
+
 /* KPI grid */
 
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
+}
+
+.impact-kpi-grid {
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
 }
 
 .kpi-card {
@@ -326,6 +338,72 @@ body {
   color: #e5e7eb;
 }
 
+/* Funding chart and FAQ */
+
+.funding-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.funding-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.campus-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.funding-track {
+  background-color: #0b1220;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  height: 24px;
+}
+
+.funding-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  color: #022c22;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.faq-panel details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: #0b1220;
+  padding: 10px 12px;
+}
+
+.faq-panel details + details {
+  margin-top: 8px;
+}
+
+.faq-panel summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faq-panel p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 /* Footer */
 
 .page-footer {
@@ -364,5 +442,14 @@ body {
 
   .page-header h1 {
     font-size: 20px;
+  }
+
+  .impact-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .funding-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }

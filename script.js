@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
-    const fillColor = `rgba(${r}, ${g}, ${b}, 0.15)`;
+    const fillColor = `rgba(${r}, ${g}, ${b}, 0.35)`;
 
     radarChartInstance = new Chart(ctx, {
       type: 'radar',
@@ -297,8 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
               font: { size: 10 },
               backdropColor: 'transparent'
             },
-            grid: { color: 'rgba(255,255,255,0.08)' },
-            angleLines: { color: 'rgba(255,255,255,0.1)' },
+            grid: { color: 'rgba(255,255,255,0.25)' },
+            angleLines: { color: 'rgba(255,255,255,0.3)' },
             pointLabels: {
               color: '#e5e7eb',
               font: { size: 11 },

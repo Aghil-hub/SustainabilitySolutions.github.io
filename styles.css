@@ -164,6 +164,7 @@ body {
   flex-wrap: wrap;
   gap: 6px;
 }
+    justify-content: center;
 
 .tab {
   border: none;
@@ -659,6 +660,14 @@ body {
   grid-column: 1 / -1;
   margin: 0 0 4px;
   font-size: 12px;
+
+  .sdg-methodology-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+    margin: 0 0 12px;
+}
   color: #9ca3af;
   background: #0b1220;
   border: 1px solid #1f2937;

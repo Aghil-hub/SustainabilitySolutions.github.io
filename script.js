@@ -324,6 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (current) lines.push(current);
                 // Append weight to the last line
                 if (lines.length > 0) lines[lines.length - 1] += weight;
+                                    // Append percentage to each label line
+                                    lines[lines.length - 1] += ` (${weight})`;
                 return lines;              }
             }
           }

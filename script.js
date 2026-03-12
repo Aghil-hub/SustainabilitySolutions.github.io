@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     2: {
       title: 'SDG 2: Zero Hunger',
       color: '#dda63a',
+          weights: ['27%', '27%', '23%', '23%']
       labels: [
         'Research on hunger',
         'Campus food waste',
@@ -303,14 +304,17 @@ document.addEventListener("DOMContentLoaded", () => {
               color: '#e5e7eb',
               font: { size: 11 },
               padding: 16,
-              callback: function(label) {
+              callback: function(label, index) {
                 const maxLen = 20;
-                if (label.length <= maxLen) return label;
-                const words = label.split(' ');
+                                // Get the weight percentage for this criterion
+                const weight = data.weights && data.weights[index] ? ` (${data.weights[index]})` : '';
+                if (label.length <= maxLen) return label + weight;
+                                const words = label.split(' ');
                 const lines = [];
                 let current = '';
-                words.forEach(word => {
-                  if ((current + ' ' + word).trim().length > maxLen) {
+                words.forEach(word => {const words = label.split(' ');
+                const lines = [];
+                let current = '';
                     if (current) lines.push(current);
                     current = word;
                   } else {
@@ -318,8 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                 });
                 if (current) lines.push(current);
-                return lines;
-              }
+                // Append weight to the last line
+                if (lines.length > 0) lines[lines.length - 1] += weight;
+                return lines;              }
             }
           }
         },

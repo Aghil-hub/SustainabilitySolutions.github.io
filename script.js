@@ -296,9 +296,9 @@ document.addEventListener("DOMContentLoaded", () => {
               color: '#e5e7eb',
               font: { size: 11 },
               padding: 16,
-              callback: function(label) {
+              callback: function(label, index) {                 const weight = data.weights ? data.weights[index] : null;
                 const maxLen = 20;
-                if (label.length <= maxLen) return label;
+                const weightStr = weight ? ` (${weight})` : '';                 if (label.length <= maxLen) return label + weightStr;
                 const words = label.split(' ');
                 const lines = [];
                 let current = '';

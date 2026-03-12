@@ -61,10 +61,10 @@ body {
 }
 
 .illinois-logo img {
-  height: 20px;
-  width: 20px;
+  height: 28px;
+  width: auto;
   display: block;
-  object-fit: contain;
+  max-width: 28px;
 }
 
 /* Layout */

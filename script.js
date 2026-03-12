@@ -296,12 +296,12 @@ document.addEventListener("DOMContentLoaded", () => {
             pointLabels: {
               color: '#e5e7eb',
               font: { size: 11 },
-              padding: 16,
+                          padding: 20,
               callback: function(label, index) {
                 const weight = data.weights ? data.weights[index] : null;
-                const maxLen = 20;
+                                const maxLen = 16;
                 const weightStr = weight ? ` (wt - ${weight})` : '';
-                if (label.length <= maxLen) return label + weightStr;
+                                if (label.length <= maxLen) return weightStr ? [label, weightStr] : label;
                 const words = label.split(' ');
                 const lines = [];
                 let current = '';
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                 });
                 if (current) lines.push(current);
-                if (weightStr) lines[lines.length - 1] += weightStr;
+                                if (weightStr) lines.push(weightStr);
                 return lines;
               }
             }

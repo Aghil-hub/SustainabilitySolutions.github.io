@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let radarChartInstance = null;
 
   // Master data object for all 17 SDGs
-  // labels = criterion names (spokes), scores = simulated UIUC performance (0–100)
   const sdgData = {
     1: {
       title: 'SDG 1: No Poverty',
@@ -59,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     2: {
       title: 'SDG 2: Zero Hunger',
       color: '#dda63a',
-          weights: ['27%', '27%', '23%', '23%']
       labels: [
         'Research on hunger',
         'Campus food waste',
@@ -247,22 +245,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = sdgData[sdgNumber];
     if (!data) return;
 
-    // Update modal title
     modalTitle.textContent = `${data.title} — UIUC Performance`;
-
-    // Show modal
     modalOverlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
-    // Destroy previous chart instance to prevent canvas reuse error
     if (radarChartInstance) {
       radarChartInstance.destroy();
       radarChartInstance = null;
     }
 
     const ctx = document.getElementById('sdg-radar-chart').getContext('2d');
-
-    // Convert hex color to rgba for fill
     const hex = data.color.replace('#', '');
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
@@ -304,17 +296,14 @@ document.addEventListener("DOMContentLoaded", () => {
               color: '#e5e7eb',
               font: { size: 11 },
               padding: 16,
-              callback: function(label, index) {
+              callback: function(label) {
                 const maxLen = 20;
-                                // Get the weight percentage for this criterion
-                const weight = data.weights && data.weights[index] ? ` (${data.weights[index]})` : '';
-                if (label.length <= maxLen) return label + weight;
-                                const words = label.split(' ');
+                if (label.length <= maxLen) return label;
+                const words = label.split(' ');
                 const lines = [];
                 let current = '';
-                words.forEach(word => {const words = label.split(' ');
-                const lines = [];
-                let current = '';
+                words.forEach(word => {
+                  if ((current + ' ' + word).trim().length > maxLen) {
                     if (current) lines.push(current);
                     current = word;
                   } else {
@@ -322,11 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                 });
                 if (current) lines.push(current);
-                // Append weight to the last line
-                if (lines.length > 0) lines[lines.length - 1] += weight;
-                                    // Append percentage to each label line
-                                    lines[lines.length - 1] += ` (${weight})`;
-                return lines;              }
+                return lines;
+              }
             }
           }
         },

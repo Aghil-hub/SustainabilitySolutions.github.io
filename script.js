@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'University anti-poverty programmes',
         'Community anti-poverty programmes'
       ],
+      weights: ['27%', '27%', '23%', '23%'],
       scores: [72, 65, 58, 81]
     },
     2: {
@@ -296,9 +297,11 @@ document.addEventListener("DOMContentLoaded", () => {
               color: '#e5e7eb',
               font: { size: 11 },
               padding: 16,
-              callback: function(label, index) {                 const weight = data.weights ? data.weights[index] : null;
+              callback: function(label, index) {
+                const weight = data.weights ? data.weights[index] : null;
                 const maxLen = 20;
-                const weightStr = weight ? ` (${weight})` : '';                 if (label.length <= maxLen) return label + weightStr;
+                const weightStr = weight ? ` (${weight})` : '';
+                if (label.length <= maxLen) return label + weightStr;
                 const words = label.split(' ');
                 const lines = [];
                 let current = '';
@@ -311,6 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                 });
                 if (current) lines.push(current);
+                if (weightStr) lines[lines.length - 1] += weightStr;
                 return lines;
               }
             }

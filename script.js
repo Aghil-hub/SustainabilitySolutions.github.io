@@ -302,7 +302,24 @@ document.addEventListener("DOMContentLoaded", () => {
             pointLabels: {
               color: '#e5e7eb',
               font: { size: 11 },
-              padding: 12
+              padding: 16,
+              callback: function(label) {
+                const maxLen = 20;
+                if (label.length <= maxLen) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let current = '';
+                words.forEach(word => {
+                  if ((current + ' ' + word).trim().length > maxLen) {
+                    if (current) lines.push(current);
+                    current = word;
+                  } else {
+                    current = (current + ' ' + word).trim();
+                  }
+                });
+                if (current) lines.push(current);
+                return lines;
+              }
             }
           }
         },

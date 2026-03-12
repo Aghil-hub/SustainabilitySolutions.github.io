@@ -223,7 +223,7 @@
 
     <section class="content tab-panel" data-panel="ranking-methodology">
       <div class="sdg-methodology-grid">
-        <article class="kpi-card sdg-card">
+        <article class="kpi-card sdg-card" id="sdg-card-1" style="cursor: pointer;" title="Click to view UIUC performance">
           <div class="sdg-card-header">
             <span class="sdg-badge sdg-1">SDG 1</span>
             <h3>No Poverty</h3>
@@ -764,6 +764,20 @@
     <span class="footer-text">Gies Sustainability Dashboard © 2026</span>
   </footer>
 
+  <!-- SDG Radar Chart Modal -->
+  <div id="sdg-modal-overlay" class="sdg-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sdg-modal-title" style="display:none;">
+    <div class="sdg-modal">
+      <button class="sdg-modal-close" id="sdg-modal-close" aria-label="Close">&times;</button>
+      <h2 id="sdg-modal-title" class="sdg-modal-title">SDG 1: No Poverty — UIUC Performance</h2>
+      <p class="sdg-modal-subtitle">Simulated UIUC scores across each ranking criterion</p>
+      <div class="sdg-modal-chart-wrap">
+        <canvas id="sdg-radar-chart" width="480" height="420"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -556,3 +556,70 @@ body {
   color: var(--accent-soft);
   align-self: flex-end;
 }
+
+/* ── SDG Radar Modal ── */
+.sdg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sdg-modal {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.sdg-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: 1px solid #374151;
+  border-radius: 999px;
+  color: #9ca3af;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sdg-modal-close:hover {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.sdg-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin: 0 0 4px;
+  padding-right: 40px;
+}
+
+.sdg-modal-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0 0 20px;
+}
+
+.sdg-modal-chart-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

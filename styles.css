@@ -57,12 +57,14 @@ body {
 .illinois-logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .illinois-logo img {
-  height: 24px;
+  height: 20px;
   width: auto;
   display: block;
+  max-width: 60px;
 }
 
 /* Layout */

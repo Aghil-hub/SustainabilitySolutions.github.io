@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
               callback: function(label, index) {
                 const weight = data.weights ? data.weights[index] : null;
                 const maxLen = 20;
-                const weightStr = weight ? ` (${weight})` : '';
+                const weightStr = weight ? ` (wt - ${weight})` : '';
                 if (label.length <= maxLen) return label + weightStr;
                 const words = label.split(' ');
                 const lines = [];

@@ -31,11 +31,12 @@
         </div>
       </div>
       <nav class="tabs">
-        <button class="tab active">Overview</button>
+        <button class="tab active" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="impact-funding">Impact &amp; Funding</button>
       </nav>
     </section>
 
-    <section class="content">
+    <section class="content tab-panel active" data-panel="overview">
       <section class="kpi-grid">
         <article class="kpi-card">
           <h3>Year Range</h3>
@@ -134,6 +135,89 @@
           </div>
         </article>
       </section>
+    </section>
+
+    <section class="content tab-panel" data-panel="impact-funding">
+      <section class="kpi-grid impact-kpi-grid">
+        <article class="kpi-card">
+          <h3>UIUC's Impact Ranking</h3>
+          <p class="kpi-value">#42</p>
+          <p class="kpi-subtext">Times Higher Education, 2025</p>
+        </article>
+        <article class="kpi-card">
+          <h3>UIUC's SDG Score</h3>
+          <p class="kpi-value">88.4</p>
+          <p class="kpi-subtext">Overall institutional score</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Top 3 SDGs for UIUC</h3>
+          <p class="kpi-value">SDG 9, SDG 4, SDG 7</p>
+          <p class="kpi-subtext">Top-performing SDGs by score</p>
+        </article>
+        <article class="kpi-card">
+          <h3>Researches &amp; Ranking Trend</h3>
+          <p class="kpi-value">1,775 | +6 rank change</p>
+          <p class="kpi-subtext">Publications count and year-over-year movement</p>
+        </article>
+      </section>
+
+      <article class="panel">
+        <header class="panel-header">
+          <h3>Funding for UIUC Within the U of I System</h3>
+          <p class="panel-subtitle">
+            Comparison of annual sustainability-aligned funding across campuses
+          </p>
+        </header>
+        <div class="funding-chart" aria-label="Funding chart for UIUC within the U of I system">
+          <div class="funding-row">
+            <span class="campus-label">UIUC</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 72%;">$72M</div>
+            </div>
+          </div>
+          <div class="funding-row">
+            <span class="campus-label">UIC</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 54%;">$54M</div>
+            </div>
+          </div>
+          <div class="funding-row">
+            <span class="campus-label">UIS</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 23%;">$23M</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel faq-panel">
+        <header class="panel-header">
+          <h3>FAQ</h3>
+          <p class="panel-subtitle">
+            Common questions about impact rankings, scores, and funding
+          </p>
+        </header>
+        <div class="faq-list">
+          <details>
+            <summary>How is UIUC's Impact Ranking calculated?</summary>
+            <p>
+              The ranking combines research influence, outreach outcomes, and SDG-aligned institutional impact metrics.
+            </p>
+          </details>
+          <details>
+            <summary>What does the UIUC SDG Score represent?</summary>
+            <p>
+              It is a composite score reflecting university performance across sustainability goals, weighted by methodology.
+            </p>
+          </details>
+          <details>
+            <summary>Why compare UIUC funding with other U of I campuses?</summary>
+            <p>
+              It shows relative investment scale across the system and helps identify where UIUC leads or needs targeted support.
+            </p>
+          </details>
+        </div>
+      </article>
     </section>
   </main>
 

@@ -94,6 +94,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+      justify-content: center;
   justify-content: space-between;
 }
 
@@ -164,7 +165,6 @@ body {
   flex-wrap: wrap;
   gap: 6px;
 }
-    justify-content: center;
 
 .tab {
   border: none;
@@ -667,6 +667,7 @@ body {
     color: var(--text);
     text-align: center;
     margin: 0 0 12px;
+        white-space: nowrap;
 }
   color: #9ca3af;
   background: #0b1220;

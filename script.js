@@ -770,4 +770,69 @@ document.addEventListener("DOMContentLoaded", () => {
       createComparisonChart(compareSelect.value);
     });
   });
+  
+  // ── Funding Trends Line Chart ──
+  const fundingCtx = document.getElementById('fundingLineChart');
+  if (fundingCtx) {
+    new Chart(fundingCtx, {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024'],
+        datasets: [
+          {
+            label: 'UIUC',
+            data: [48, 55, 61, 68, 72],
+            borderColor: '#22c55e',
+            backgroundColor: 'rgba(34,197,94,0.15)',
+            pointBorderColor: '#22c55e',
+            pointBackgroundColor: '#fff',
+            tension: 0.3,
+            pointRadius: 4
+          },
+          {
+            label: 'UIC',
+            data: [34, 39, 44, 49, 54],
+            borderColor: '#60a5fa',
+            backgroundColor: 'rgba(96,165,250,0.15)',
+            pointBorderColor: '#60a5fa',
+            pointBackgroundColor: '#fff',
+            tension: 0.3,
+            pointRadius: 4
+          },
+          {
+            label: 'UIS',
+            data: [12, 15, 18, 20, 23],
+            borderColor: '#a78bfa',
+            backgroundColor: 'rgba(167,139,250,0.15)',
+            pointBorderColor: '#a78bfa',
+            pointBackgroundColor: '#fff',
+            tension: 0.3,
+            pointRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: { color: '#e5e7eb' },
+            grid: { color: 'rgba(31,41,55,0.3)' }
+          },
+          y: {
+            ticks: { color: '#e5e7eb' },
+            grid: { color: 'rgba(31,41,55,0.3)' },
+            title: {
+              display: true,
+              text: 'Funding (Millions USD)',
+              color: '#e5e7eb'
+            }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: '#e5e7eb' } }
+        }
+      }
+    });
+  }
 });

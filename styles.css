@@ -1013,3 +1013,131 @@ body {
   color: var(--text);
   font-weight: 500;
 }
+
+/* ── Impact & Funding Tab: SDG Section ── */
+.sdg-section {
+  margin-top: 8px;
+  background-color: rgba(34, 197, 94, 0.05);
+  border-radius: var(--surface-radius);
+  padding: 20px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.sdg-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.sdg-badge {
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sdg-badge:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Impact & Funding Tab: Chart Container ── */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 16px;
+}
+
+#fundingLineChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ── Impact & Funding Tab: Insights Panel ── */
+.insights-panel .insights-list details {
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 12px;
+  background-color: var(--bg-elevated);
+  padding: 16px 18px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insights-panel .insights-list details:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.insights-panel .insights-list details[open] {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.insights-panel .insights-list details + details {
+  margin-top: 12px;
+}
+
+.insights-panel .insights-list summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.3s ease;
+  list-style: none;
+  position: relative;
+  padding-right: 24px;
+}
+
+.insights-panel .insights-list summary::marker {
+  display: none;
+}
+
+.insights-panel .insights-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.insights-panel .insights-list details[open] summary::after {
+  content: "−";
+}
+
+.insights-panel .insights-list p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .sdg-section {
+    padding: 16px;
+  }
+  .sdg-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  .chart-container {
+    height: 220px;
+  }
+  .insights-panel .insights-list details {
+    padding: 12px 14px;
+  }
+  .insights-panel .insights-list summary {
+    font-size: 14px;
+  }
+}

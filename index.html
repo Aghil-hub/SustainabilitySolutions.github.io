@@ -8,35 +8,22 @@
 </head>
 <body>
   <header class="top-bar">
-    <img class="illinois-logo" src="images/uiuc.png" alt="University of Illinois Logo">
+        <img class="illinois-logo" src="images/512px-Illinois_Block_I.png" alt="University of Illinois Logo" style="height: 40px; width: auto;">
     <h1>Gies Sustainability Dashboard - THE Impact Rankings</h1>
   </header>
 
   <main class="page">
 
 
-    <section class="filters-bar">
-      <div class="filters-left">
-        <button class="filters-btn">
-          <span>Filters</span>
-          <span class="badge">2</span>
-        </button>
-        <div class="filter-chip">
-          <span>Business Journals Only</span>
-          <button class="chip-remove" aria-label="Remove filter">&times;</button>
-        </div>
-        <div class="filter-chip">
-          <span>Year: 1966 - 2024</span>
-          <button class="chip-remove" aria-label="Remove filter">&times;</button>
-        </div>
-      </div>
       <nav class="tabs">
+        
         <button class="tab active" data-tab="overview">Overview</button>
         <button class="tab" data-tab="impact-funding">Impact &amp; Funding</button>
-      </nav>
-    </section>
-
-    <section class="content tab-panel active" data-panel="overview">
+        <button class="tab" data-tab="comparative-analysis">Comparative Analysis</button>
+        <button class="tab" data-tab="ranking-methodology">Ranking Methodology</button>
+                </nav>
+    
+   <section class="content tab-panel active" data-panel="overview">
       <section class="kpi-grid">
         <article class="kpi-card">
           <h3>Year Range</h3>
@@ -150,50 +137,54 @@
           <p class="kpi-subtext">Overall institutional score</p>
         </article>
         <article class="kpi-card">
-          <h3>Total Research Publications</h3>
-          <p class="kpi-value">1,775</p>
-          <p class="kpi-subtext">Sustainability-related publications analyzed</p>
+          <h3>Top 3 SDGs for UIUC</h3>
+          <p class="kpi-value">SDG 9, SDG 4, SDG 7</p>
+          <p class="kpi-subtext">Top-performing SDGs by score</p>
         </article>
         <article class="kpi-card">
-          <h3>Ranking Improvement</h3>
-          <p class="kpi-value">+6</p>
-          <p class="kpi-subtext">Change in THE Impact Ranking (year-over-year)</p>
+          <h3>Researches &amp; Ranking Trend</h3>
+          <p class="kpi-value">1,775 | +6 rank change</p>
+          <p class="kpi-subtext">Publications count and year-over-year movement</p>
         </article>
-      </section>
-
-      <section class="sdg-section">
-        <header class="panel-header">
-          <h3>Top 3 SDGs for UIUC</h3>
-          <p class="panel-subtitle">Highest-performing sustainability goals by institutional score</p>
-        </header>
-        <div class="sdg-badges">
-          <div class="sdg-badge">SDG 9</div>
-          <div class="sdg-badge">SDG 4</div>
-          <div class="sdg-badge">SDG 7</div>
-        </div>
       </section>
 
       <article class="panel">
         <header class="panel-header">
-          <h3>UIUC Sustainability Funding Trends</h3>
+          <h3>Funding for UIUC Within the U of I System</h3>
           <p class="panel-subtitle">
-            Annual funding allocation across University of Illinois campuses
+            Comparison of annual sustainability-aligned funding across campuses
           </p>
         </header>
-        <!-- Line chart replacing the previous horizontal bars -->
-        <div class="chart-container">
-          <canvas id="fundingLineChart"></canvas>
+        <div class="funding-chart" aria-label="Funding chart for UIUC within the U of I system">
+          <div class="funding-row">
+            <span class="campus-label">UIUC</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 72%;">$72M</div>
+            </div>
+          </div>
+          <div class="funding-row">
+            <span class="campus-label">UIC</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 54%;">$54M</div>
+            </div>
+          </div>
+          <div class="funding-row">
+            <span class="campus-label">UIS</span>
+            <div class="funding-track">
+              <div class="funding-fill" style="width: 23%;">$23M</div>
+            </div>
+          </div>
         </div>
       </article>
 
-      <article class="panel insights-panel">
+      <article class="panel faq-panel">
         <header class="panel-header">
-          <h3>Key Questions & Insights</h3>
+          <h3>FAQ</h3>
           <p class="panel-subtitle">
-            Detailed insights and answers to common queries
+            Common questions about impact rankings, scores, and funding
           </p>
         </header>
-        <div class="insights-list">
+        <div class="faq-list">
           <details>
             <summary>How is UIUC's Impact Ranking calculated?</summary>
             <p>
@@ -215,6 +206,681 @@
         </div>
       </article>
     </section>
+
+    <section class="content tab-panel" data-panel="comparative-analysis">
+      <section class="kpi-grid">
+        <article class="kpi-card">
+          <h3>UIUC Impact Ranking</h3>
+          <p class="kpi-value">#42</p>
+          <p class="kpi-subtext">Times Higher Education, 2025</p>
+        </article>
+        <article class="kpi-card">
+          <h3>UIUC Avg Impact Score</h3>
+          <p class="kpi-value">88.4</p>
+          <p class="kpi-subtext">Out of 100</p>
+        </article>
+      </section>
+
+      <article class="panel comparative-panel">
+        <header class="panel-header">
+          <h3>SDG Impact Comparison: UIUC vs. Peer Institutions</h3>
+          <p class="panel-subtitle">
+            Comparative radar chart showing UIUC's performance across all 17 Sustainable Development Goals compared to peer universities (ASU, MSU, Penn State, FIU)
+          </p>
+        </header>
+        
+        <div class="comparative-controls-wrapper">
+          <div class="comparative-controls">
+            <label>Select SDG:</label>
+            <select id="compare-sdg-select" class="compare-select">
+              <option value="all">All SDGs Overview</option>
+              <option value="1">SDG 1: No Poverty</option>
+              <option value="2">SDG 2: Zero Hunger</option>
+              <option value="3">SDG 3: Good Health and Well-being</option>
+              <option value="4">SDG 4: Quality Education</option>
+              <option value="5">SDG 5: Gender Equality</option>
+              <option value="6">SDG 6: Clean Water and Sanitation</option>
+              <option value="7">SDG 7: Affordable and Clean Energy</option>
+              <option value="8">SDG 8: Decent Work and Economic Growth</option>
+              <option value="9">SDG 9: Industry, Innovation and Infrastructure</option>
+              <option value="10">SDG 10: Reduced Inequalities</option>
+              <option value="11">SDG 11: Sustainable Cities and Communities</option>
+              <option value="12">SDG 12: Responsible Consumption and Production</option>
+              <option value="13">SDG 13: Climate Action</option>
+              <option value="14">SDG 14: Life Below Water</option>
+              <option value="15">SDG 15: Life on Land</option>
+              <option value="16">SDG 16: Peace, Justice and Strong Institutions</option>
+              <option value="17">SDG 17: Partnerships for the Goals</option>
+            </select>
+          </div>
+
+          <div class="university-selector">
+            <label>Select Universities to Compare:</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" class="university-checkbox" value="UIUC" checked data-color="#16a34a">
+                <span class="checkbox-custom"></span>
+                <span>UIUC</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="university-checkbox" value="ASU" checked data-color="#1e40af">
+                <span class="checkbox-custom"></span>
+                <span>ASU</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="university-checkbox" value="MSU" checked data-color="#7c3aed">
+                <span class="checkbox-custom"></span>
+                <span>MSU</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="university-checkbox" value="Penn State" checked data-color="#db2777">
+                <span class="checkbox-custom"></span>
+                <span>Penn State</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="university-checkbox" value="FIU" checked data-color="#ea580c">
+                <span class="checkbox-custom"></span>
+                <span>FIU</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-and-legend-wrapper">
+          <div class="comparative-chart-container">
+            <canvas id="comparison-radar-chart" width="500" height="500"></canvas>
+            <div class="hover-tooltip" id="hover-tooltip"></div>
+          </div>
+          <div class="comparative-legend" id="dynamic-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: #16a34a;"></span>
+              <span>UIUC</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: #1e40af;"></span>
+              <span>ASU</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: #7c3aed;"></span>
+              <span>MSU</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: #db2777;"></span>
+              <span>Penn State</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background-color: #ea580c;"></span>
+              <span>FIU</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <h3>Key Insights for UIUC</h3>
+          <p class="panel-subtitle">
+            Recommendations for advancing UIUC's impact in the Times Higher Education Impact Rankings
+          </p>
+        </header>
+        <div class="insights-list">
+          <div class="insight-item">
+            <h4>🎯 Strengths</h4>
+            <p>UIUC excels in <strong>SDG 7 (Clean Energy)</strong>, <strong>SDG 4 (Quality Education)</strong>, and <strong>SDG 9 (Innovation)</strong>. These research areas showcase the university's capacity for high-impact sustainability research.</p>
+          </div>
+          <div class="insight-item">
+            <h4>📈 Growth Opportunities</h4>
+            <p>Consider strategic investments in <strong>SDG 6 (Clean Water)</strong>, <strong>SDG 12 (Consumption)</strong>, and <strong>SDG 15 (Life on Land)</strong> to diversify impact areas and improve the overall ranking.</p>
+          </div>
+          <div class="insight-item">
+            <h4>🤝 Strategic Partnerships</h4>
+            <p>Leverage existing partnerships and establish new collaborations in areas where peer institutions lead. Cross-institutional research can strengthen UIUC's competitiveness.</p>
+          </div>
+          <div class="insight-item">
+            <h4>🔬 Research Focus</h4>
+            <p>Align departmental research initiatives with the 17 SDGs. The greater the proportion of research addressing SDGs, the higher the impact score and ranking advancement.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="content tab-panel" data-panel="ranking-methodology">
+      <div class="sdg-methodology-grid">
+                    <h2 class="sdg-methodology-title" style="white-space:nowrap;text-align:center;grid-column:1/-1;">THE Impact Ranking Score Weights</h2>
+            <p class="sdg-methodology-note">Percentages show each criterion's weight in the THE Impact Ranking score for that SDG. They reflect how much each metric contributes to the overall assessment, not UIUC's performance. <strong>Click any card to view UIUC's simulated performance scores.</strong></p>        <article class="kpi-card sdg-card" id="sdg-card-1" style="cursor: pointer;" title="Click to view UIUC performance">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-1">SDG 1</span>
+            <h3>No Poverty</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on poverty</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of students receiving financial aid</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">University anti-poverty programmes</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Community anti-poverty programmes</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-2" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-2">SDG 2</span>
+            <h3>Zero Hunger</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on hunger</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Campus food waste</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Student hunger</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.2%"></div></div>
+              <span class="sdg-metric-pct">19.2%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of graduates in agriculture/aquaculture</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.2%"></div></div>
+              <span class="sdg-metric-pct">19.2%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">National hunger</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.2%"></div></div>
+              <span class="sdg-metric-pct">19.2%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-3" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-3">SDG 3</span>
+            <h3>Good Health and Well-being</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on health and well-being</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Number graduating in health professions</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 34.6%"></div></div>
+              <span class="sdg-metric-pct">34.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Collaborations and health services</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 38.4%"></div></div>
+              <span class="sdg-metric-pct">38.4%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-4" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-4">SDG 4</span>
+            <h3>Quality Education</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on early years and lifelong learning</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of graduates with teaching qualification</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Lifelong learning measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 26.8%"></div></div>
+              <span class="sdg-metric-pct">26.8%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of first-generation students</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 30.8%"></div></div>
+              <span class="sdg-metric-pct">30.8%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-5" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-5">SDG 5</span>
+            <h3>Gender Equality</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on gender equality</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of first-generation female students</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Student access measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of senior female academics</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of women receiving degrees</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 11.5%"></div></div>
+              <span class="sdg-metric-pct">11.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Women's progress measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.3%"></div></div>
+              <span class="sdg-metric-pct">15.3%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-6" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-6">SDG 6</span>
+            <h3>Clean Water and Sanitation</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on water</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Water consumption per person</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Water usage and care</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Water reuse</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 12%"></div></div>
+              <span class="sdg-metric-pct">12%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Water in the community</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-7" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-7">SDG 7</span>
+            <h3>Affordable and Clean Energy</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on clean energy</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">University measures towards clean energy</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Energy use density</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 17%"></div></div>
+              <span class="sdg-metric-pct">17%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Energy and the community</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Low-carbon energy use</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 10%"></div></div>
+              <span class="sdg-metric-pct">10%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-8" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-8">SDG 8</span>
+            <h3>Decent Work and Economic Growth</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on economic growth and employment</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Employment practice</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.6%"></div></div>
+              <span class="sdg-metric-pct">19.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Expenditure per employee</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of students taking work placements</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of employees on secure contracts</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-9" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-9">SDG 9</span>
+            <h3>Industry, Innovation and Infrastructure</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on industry, innovation and infrastructure</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 11.6%"></div></div>
+              <span class="sdg-metric-pct">11.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Patents citing university research</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.4%"></div></div>
+              <span class="sdg-metric-pct">15.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">University spin-offs</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 34.6%"></div></div>
+              <span class="sdg-metric-pct">34.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research income from industry and commerce</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 38.4%"></div></div>
+              <span class="sdg-metric-pct">38.4%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-10" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-10">SDG 10</span>
+            <h3>Reduced Inequalities</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on reduced inequalities</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">First-generation students</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.5%"></div></div>
+              <span class="sdg-metric-pct">15.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">International students from developing countries</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.5%"></div></div>
+              <span class="sdg-metric-pct">15.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of students with disabilities</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 11.5%"></div></div>
+              <span class="sdg-metric-pct">11.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of employees with disabilities</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 11.5%"></div></div>
+              <span class="sdg-metric-pct">11.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Measures against discrimination</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-11" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-11">SDG 11</span>
+            <h3>Sustainable Cities and Communities</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on sustainable cities and communities</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Support of arts and heritage</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 22.6%"></div></div>
+              <span class="sdg-metric-pct">22.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Expenditure on arts and heritage</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.3%"></div></div>
+              <span class="sdg-metric-pct">15.3%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Sustainable practices</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 35.1%"></div></div>
+              <span class="sdg-metric-pct">35.1%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-12" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-12">SDG 12</span>
+            <h3>Responsible Consumption and Production</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on responsible consumption and production</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Operational measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 26.7%"></div></div>
+              <span class="sdg-metric-pct">26.7%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of recycled waste</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Publication of a sustainability report</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.3%"></div></div>
+              <span class="sdg-metric-pct">19.3%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-13" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-13">SDG 13</span>
+            <h3>Climate Action</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on climate action</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Low-carbon energy use</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Environmental education measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Commitment to carbon neutral university</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-14" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-14">SDG 14</span>
+            <h3>Life Below Water</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on life below water</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Supporting aquatic ecosystems through education</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 15.3%"></div></div>
+              <span class="sdg-metric-pct">15.3%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Supporting aquatic ecosystems through action</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.4%"></div></div>
+              <span class="sdg-metric-pct">19.4%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Water sensitive waste disposal</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19.3%"></div></div>
+              <span class="sdg-metric-pct">19.3%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Maintaining a local ecosystem</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 19%"></div></div>
+              <span class="sdg-metric-pct">19%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-15" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-15">SDG 15</span>
+            <h3>Life on Land</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on land ecosystems</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Supporting land ecosystems through education</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Supporting land ecosystems through action</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Land sensitive waste disposal</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-16" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-16">SDG 16</span>
+            <h3>Peace, Justice and Strong Institutions</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research on peace and justice</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">University governance measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 26.6%"></div></div>
+              <span class="sdg-metric-pct">26.6%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Academic freedom and data</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23%"></div></div>
+              <span class="sdg-metric-pct">23%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Proportion of graduates in law and civil enforcement</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 23.2%"></div></div>
+              <span class="sdg-metric-pct">23.2%</span>
+            </li>
+          </ul>
+        </article>
+
+              <article class="kpi-card sdg-card" id="sdg-card-17" style="cursor:pointer;">
+          <div class="sdg-card-header">
+            <span class="sdg-badge sdg-17">SDG 17</span>
+            <h3>Partnerships for the Goals</h3>
+          </div>
+          <ul class="sdg-metric-list">
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Research into partnership for the goals</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27%"></div></div>
+              <span class="sdg-metric-pct">27%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">SDG collaboration measures</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 18.5%"></div></div>
+              <span class="sdg-metric-pct">18.5%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Publication of SDG reports</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 27.2%"></div></div>
+              <span class="sdg-metric-pct">27.2%</span>
+            </li>
+            <li class="sdg-metric-item">
+              <span class="sdg-metric-label">Education for SDGs</span>
+              <div class="sdg-metric-bar-wrap"><div class="sdg-metric-bar" style="width: 18.12%"></div></div>
+              <span class="sdg-metric-pct">18.12%</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="page-footer">
@@ -222,9 +888,20 @@
     <span class="footer-text">Gies Sustainability Dashboard © 2026</span>
   </footer>
 
-  <!-- Chart.js CDN for visualizations -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-  <script src="script.js"></script>
-</body>
+  <!-- SDG Radar Chart Modal -->
+  <div id="sdg-modal-overlay" class="sdg-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sdg-modal-title" style="display:none;">
+    <div class="sdg-modal">
+      <button class="sdg-modal-close" id="sdg-modal-close" aria-label="Close">&times;</button>
+      <h2 id="sdg-modal-title" class="sdg-modal-title">SDG 1: No Poverty — UIUC Performance</h2>
+      <p class="sdg-modal-subtitle">Simulated UIUC scores across each ranking criterion</p>
+      <div class="sdg-modal-chart-wrap">
+        <canvas id="sdg-radar-chart" width="480" height="420"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script src="script.js?v=5"></script>
+</bo6y>
 </html>

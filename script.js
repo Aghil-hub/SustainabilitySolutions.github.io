@@ -775,7 +775,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fundingCtx = document.getElementById('fundingLineChart');
   if (fundingCtx) {
     new Chart(fundingCtx, {
-      type: 'bar',
+      type: 'line',
       data: {
         labels: ['2020', '2021', '2022', '2023', '2024'],
         datasets: [

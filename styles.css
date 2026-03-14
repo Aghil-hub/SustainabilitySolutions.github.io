@@ -729,8 +729,9 @@ body {
 
 .chart-and-legend-wrapper {
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  align-items: flex-start;
+  align-items: stretch;
   padding: 24px;
   background-color: rgba(17, 24, 39, 0.5);
   border: 1px solid rgba(31, 41, 55, 0.5);
@@ -792,15 +793,13 @@ body {
 
 #dynamic-legend {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 8px;
   padding: 16px;
   background-color: rgba(17, 24, 39, 0.7);
   border: 1px solid rgba(31, 41, 55, 0.5);
   border-radius: 8px;
-  min-width: 240px;
-  max-width: 280px;
-  flex-shrink: 0;
 }
 
 #dynamic-legend .legend-item {
@@ -837,10 +836,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .chart-and-legend-wrapper {
-    flex-direction: column;
-  }
-
   .comparative-chart-container {
     min-width: 100%;
     min-height: 400px;
@@ -848,9 +843,6 @@ body {
 
   #dynamic-legend {
     width: 100%;
-    max-height: 300px;
-    min-width: unset;
-  }
 }
 
 .legend-item {

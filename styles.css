@@ -258,6 +258,10 @@ body {
   font-size: 14px;
 }
 
+.panel-header {
+    margin-bottom: 12px;
+  }
+
 .panel-subtitle {
   margin: 0;
   font-size: 12px;

@@ -175,7 +175,7 @@ body {
     background: var(--bg-elevated);
     color: var(--text);      /* Changed from text-secondary for better contrast */
     cursor: pointer;
-    font-size: 13px;         /* Slightly increased size */
+    font-size: 15px;         /* Slightly increased size */
     font-weight: 400; /* Forces the text to be extra bold */
     transition: all 0.3s ease;
 }
@@ -190,7 +190,7 @@ body {
 .tab.active, .tab-btn.active {
     background-color: #334155; /* You can also use a specific blue/orange here */
     color: white;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .tab {

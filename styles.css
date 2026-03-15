@@ -187,11 +187,10 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.tab-btn.active {
-    background-color: var(--accent-strong);
+.tab.active, .tab-btn.active {
+    background-color: #1e40af; /* You can also use a specific blue/orange here */
     color: white;
-    border-color: var(--accent-strong);
-    font-weight: 800;        /* Keeps it bold when active */
+    font-weight: 800;
 }
 
 .tab {
@@ -210,8 +209,11 @@ body {
 }
 
 .tab.active {
-  background-color: var(--tab-active);
-  color: var(--text);
+    background-color: var(--accent-strong); /* Uses your theme's main color */
+    color: #ffffff;                         /* White text for contrast */
+    font-weight: 800;                       /* Extra bold */
+    border-color: var(--accent-strong);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Makes it look "pressed" or active */
 }
 
 /* Content */

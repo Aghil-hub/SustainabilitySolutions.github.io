@@ -1,9 +1,9 @@
 :root {
   --bg: #0f172a;
   --bg-elevated: #111827;
-  --accent: #22c55e;
-  --accent-soft: #bbf7d0;
-  --accent-strong: #16a34a;
+  --accent: #2e7d32;
+  --accent-soft: #a5d6a7;
+  --accent-strong: #1b5e20;
   --text: #e5e7eb;
   --muted: #9ca3af;
   --border: #1f2937;
@@ -176,7 +176,7 @@ body {
     color: var(--text);      /* Changed from text-secondary for better contrast */
     cursor: pointer;
     font-size: 15px;         /* Slightly increased size */
-    font-weight: 800 !important; /* Forces the text to be extra bold */
+    font-weight: 500; /* Forces the text to be extra bold */
     transition: all 0.3s ease;
 }
 
@@ -190,7 +190,7 @@ body {
 .tab.active, .tab-btn.active {
     background-color: #334155; /* You can also use a specific blue/orange here */
     color: white;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .tab {

@@ -95,7 +95,7 @@ body {
   gap: 12px;
   align-items: center;
       justify-content: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 
@@ -163,7 +163,34 @@ body {
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;         /* Makes text stand out */
+    transition: all 0.3s ease; /* Required for the smooth hover effect */    /* Makes the buttons a bit larger */
+}
+
+.tab-btn:hover {
+    background-color: var(--accent-strong);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-strong);
+    color: white;
+    border-color: var(--accent-strong);
 }
 
 .tab {

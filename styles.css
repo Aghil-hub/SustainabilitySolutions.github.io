@@ -188,9 +188,9 @@ body {
 }
 
 .tab.active, .tab-btn.active {
-    background-color: #1e40af; /* You can also use a specific blue/orange here */
+    background-color: #334155; /* You can also use a specific blue/orange here */
     color: white;
-    font-weight: 800;
+    font-weight: 500;
 }
 
 .tab {

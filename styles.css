@@ -173,11 +173,11 @@ body {
     border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--bg-elevated);
-    color: var(--text-secondary);
+    color: var(--text);      /* Changed from text-secondary for better contrast */
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;         /* Makes text stand out */
-    transition: all 0.3s ease; /* Required for the smooth hover effect */    /* Makes the buttons a bit larger */
+    font-size: 15px;         /* Slightly increased size */
+    font-weight: 800 !important; /* Forces the text to be extra bold */
+    transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
@@ -191,16 +191,18 @@ body {
     background-color: var(--accent-strong);
     color: white;
     border-color: var(--accent-strong);
+    font-weight: 800;        /* Keeps it bold when active */
 }
 
 .tab {
-  border: none;
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 12px;
-  background-color: transparent;
-  color: var(--muted);
-  cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 700; /* Makes these stand out too */
 }
 
 .tab:hover {

@@ -771,43 +771,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // ── Funding Trends Line Chart ──
-  const fundingCtx = document.getElementById('fundingLineChart');
-  if (fundingCtx) {
-    new Chart(fundingCtx, {
+  // ── 2024 Campus Funding Comparison Bar Chart (Left) ──
+  const fundingBarCtx = document.getElementById('fundingBarChart2024');
+  if (fundingBarCtx) {
+    new Chart(fundingBarCtx, {
       type: 'bar',
       data: {
-        labels: ['2020', '2021', '2022', '2023', '2024'],
+        labels: ['UIUC', 'UIC', 'UIS'],
         datasets: [
           {
-            label: 'UIUC',
-            data: [48, 55, 61, 68, 72],
-            borderColor: '#22c55e',
-            backgroundColor: 'rgba(34,197,94,1)',
-            pointBorderColor: '#22c55e',
-            pointBackgroundColor: '#fff',
-            tension: 0.3,
-            pointRadius: 4
-          },
-          {
-            label: 'UIC',
-            data: [34, 39, 44, 49, 54],
-            borderColor: '#60a5fa',
-            backgroundColor: 'rgba(96,165,250,1)',
-            pointBorderColor: '#60a5fa',
-            pointBackgroundColor: '#fff',
-            tension: 0.3,
-            pointRadius: 4
-          },
-          {
-            label: 'UIS',
-            data: [12, 15, 18, 20, 23],
-            borderColor: '#a78bfa',
-            backgroundColor: 'rgba(167,139,250,1)',
-            pointBorderColor: '#a78bfa',
-            pointBackgroundColor: '#fff',
-            tension: 0.3,
-            pointRadius: 4
+            label: '2024 Total Funding (Millions USD)',
+            data: [72, 54, 23],
+            // Uses the dashboard's own accent green + tinted variants for UIC/UIS
+            backgroundColor: [
+              'rgba(46,125,50,0.85)',   // --accent #2e7d32
+              'rgba(96,165,250,0.75)',  // blue tint for UIC
+              'rgba(167,139,250,0.75)' // purple tint for UIS
+            ],
+            borderColor: [
+              '#2e7d32',
+              '#60a5fa',
+              '#a78bfa'
+            ],
+            borderWidth: 1,
+            borderRadius: 6
           }
         ]
       },
@@ -816,21 +803,95 @@ document.addEventListener("DOMContentLoaded", () => {
         maintainAspectRatio: false,
         scales: {
           x: {
-            ticks: { color: '#e5e7eb' },
-            grid: { color: 'rgba(31,41,55,0.3)' }
+            ticks: { color: '#e5e7eb', font: { size: 13, weight: '600' } },
+            grid: { display: false },
+            border: { color: '#1f2937' }
           },
           y: {
-            ticks: { color: '#e5e7eb' },
-            grid: { color: 'rgba(31,41,55,0.3)' },
+            ticks: { color: '#9ca3af' },
+            grid: { color: 'rgba(31,41,55,0.6)' },
+            border: { color: '#1f2937' },
             title: {
               display: true,
               text: 'Funding (Millions USD)',
-              color: '#e5e7eb'
-            }
+              color: '#9ca3af',
+              font: { size: 11 }
+            },
+            beginAtZero: true
           }
         },
         plugins: {
-          legend: { labels: { color: '#e5e7eb' } }
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#111827',
+            borderColor: '#1f2937',
+            borderWidth: 1,
+            titleColor: '#e5e7eb',
+            bodyColor: '#9ca3af',
+            callbacks: {
+              label: ctx => ` $${ctx.parsed.y}M`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // ── UIUC 2024 Funding Sources Donut Chart (Right) ──
+  const fundingSourcesCtx = document.getElementById('fundingSourcesChart');
+  if (fundingSourcesCtx) {
+    new Chart(fundingSourcesCtx, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          'Federal Government',
+          'Industry & Commerce',
+          'State Government',
+          'Private Foundations',
+          'Other Sources'
+        ],
+        datasets: [
+          {
+            data: [38, 18, 9, 4, 3],
+            // Greens from the dashboard palette + complementary tones
+            backgroundColor: [
+              'rgba(46,125,50,0.9)',    // --accent
+              'rgba(165,214,167,0.75)', // --accent-soft
+              'rgba(27,94,32,0.85)',    // --accent-strong
+              'rgba(96,165,250,0.75)',
+              'rgba(156,163,175,0.6)'  // --muted
+            ],
+            borderColor: '#111827',    // --bg-elevated
+            borderWidth: 2,
+            hoverOffset: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '62%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#9ca3af',        // --muted
+              padding: 10,
+              font: { size: 11 },
+              usePointStyle: true,
+              pointStyleWidth: 8
+            }
+          },
+          tooltip: {
+            backgroundColor: '#111827',
+            borderColor: '#1f2937',
+            borderWidth: 1,
+            titleColor: '#e5e7eb',
+            bodyColor: '#9ca3af',
+            callbacks: {
+              label: ctx => ` ${ctx.label}: $${ctx.parsed}M`
+            }
+          }
         }
       }
     });

@@ -1094,7 +1094,29 @@ body {
   margin-top: 16px;
 }
 
-#fundingLineChart {
+/* ── Funding Split Layout ── */
+.funding-split-layout {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.funding-half {
+  flex: 1 1 260px;
+  min-width: 240px;
+}
+
+.funding-half-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+}
+
+#fundingBarChart2024,
+#fundingSourcesChart {
   width: 100% !important;
   height: 100% !important;
 }

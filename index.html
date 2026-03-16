@@ -62,12 +62,24 @@
           <header class="panel-header">
             <h3>Funding Comparison</h3>
             <p class="panel-subtitle">
-              Annual total funding allocation across University of Illinois campuses
+              2024 total funding by campus &amp; UIUC funding sources breakdown
             </p>
           </header>
-          <!-- Line chart replacing the previous horizontal bars -->
-          <div class="chart-container">
-            <canvas id="fundingLineChart"></canvas>
+          <div class="funding-split-layout">
+            <!-- Left: 2024 Campus Comparison Bar Chart -->
+            <div class="funding-half">
+              <h4 class="funding-half-title">Campus Funding (2024)</h4>
+              <div class="chart-container">
+                <canvas id="fundingBarChart2024"></canvas>
+              </div>
+            </div>
+            <!-- Right: UIUC Funding Sources Donut Chart -->
+            <div class="funding-half">
+              <h4 class="funding-half-title">UIUC Funding Sources (2024)</h4>
+              <div class="chart-container">
+                <canvas id="fundingSourcesChart"></canvas>
+              </div>
+            </div>
           </div>
         </article>
 

@@ -845,7 +845,7 @@ document.addEventListener("DOMContentLoaded", () => {
       data: {
         labels: [
           'Federal Government',
-          'Industry & Commerce',
+          'Institution Funds',
           'State Government',
           'Private Foundations',
           'Other Sources'

@@ -6,7 +6,9 @@ An interactive web dashboard that compares universities on key sustainability me
 
 - GitHub Pages: https://aghil-hub.github.io/SustainabilitySolutions.github.io/
 
-## Purpose and context
+## Contributors:
+
+Juan Carlos Zapata, Suyash Sawant, Tanusha Mukund, Lin Shihfu (Theo), Ammratansh Ghildyal
 
 ## Purpose and context
 

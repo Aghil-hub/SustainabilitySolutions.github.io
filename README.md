@@ -8,7 +8,7 @@ An interactive web dashboard that compares universities on key sustainability me
 
 ## Contributors:
 
-Juan Carlos Zapata, Suyash Sawant, Tanusha Mukund, Lin Shihfu (Theo), Ammratansh Ghildyal
+Juan Carlos Zapata, Suyash Sawant, Tanusha Mukund, Lin Shih-fu (Theo), Ammratansh Ghildyal
 
 ## Purpose and context
 

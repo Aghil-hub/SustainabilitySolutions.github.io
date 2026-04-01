@@ -1,6 +1,6 @@
 # SustainabilitySolutions
 
-An interactive web dashboard that compares universities on key sustainability metrics such as energy efficiency, waste reduction, transportation, and campus initiatives.
+An interactive web dashboard that compares UIUC with peer institutions across key sustainability indicators and illustrates how ranking performance can be enhanced, thereby advancing progress toward the UN Sustainable Development Goals (SDGs).
 
 ## Live site
 
